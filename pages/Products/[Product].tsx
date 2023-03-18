@@ -29,7 +29,8 @@ export default function SingleProduct ( ){
     return (
         <>
         <div>
-         
+            <img src={product?.image}/>
+            <p>{product?.name}</p>
         </div>
         </>
     )
