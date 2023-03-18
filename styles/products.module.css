@@ -1,0 +1,13 @@
+.Products { 
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.Card {
+    width: 90%;
+    margin: auto;
+}
+
+.Cardimg {
+    width: 100%;
+}
