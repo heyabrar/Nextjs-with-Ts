@@ -28,7 +28,7 @@ export default function SingleProduct ( ){
 
     return (
         <>
-        <div>
+        <div style={{width : '40%', margin : 'auto'}}>
             <img src={product?.image}/>
             <p>{product?.name}</p>
         </div>
