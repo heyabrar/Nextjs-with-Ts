@@ -1,37 +1,38 @@
-import { GetSingleProduct } from "@/Fetch/Fetch";
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
+export const getStaticPaths = async () => {
+    const res = await fetch(`https://api.escuelajs.co/api/v1/categories`);
+    const Data = await res.json();
 
-interface SingleProduct {
-    id: number,
-    name: string,
-    image: string,
-    creationAt: string,
-    updatedAt: string
+    const paths = Data.map((e: any) => {
+        return {
+            params: {
+                Product: e.id.toString()
+            }
+        }
+    })
+    return {
+        paths,
+        fallback: false
+    }
+}
+export const getStaticProps = async (paths: any) => {
+    const Id = paths.params.Product;
+    const res = await fetch(`https://api.escuelajs.co/api/v1/categories/${Id}`);
+    const Data = await res.json();
+
+    return {
+        props: {
+            Data,
+        }
+    }
 }
 
-export default function SingleProduct ( ){
-    const [product,setProduct] = useState<SingleProduct | { }> ()
-    const Router = useRouter( );
-    const ProductNumber  = Router.query.Product;
- 
-    const handleSingleProduct = ( ) =>{
-        GetSingleProduct(ProductNumber).then((res)=>{
-            setProduct(res.data)
-        })
-        .catch((err)=> console.log(err))
-    }
-
-    useEffect(( ) =>{
-        handleSingleProduct( );
-    },[ ])
-
+export default function SingleProduct({ Data }: any) {
     return (
         <>
-        <div style={{width : '40%', margin : 'auto'}}>
-            <img src={product?.image}/>
-            <p>{product?.name}</p>
-        </div>
+            <div style={{ width: '40%', margin: 'auto' }}>
+                <img src={Data.image} />
+                <p>{Data.name}</p>
+            </div>
         </>
     )
 }
