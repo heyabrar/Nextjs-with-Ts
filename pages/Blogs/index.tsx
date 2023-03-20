@@ -22,11 +22,11 @@ export default function Blog({ data }: any) {
     return (
         <>
             <Navbar />
-            <h1>Welcome to Blog</h1>
-            {data.map((e: Blogs) => {
-                return <div key={e.id}>
-                    <Link href={`Blogs/${e.id}`}><p>{e.title}</p></Link>
-                   
+            <h1 style={{textAlign : 'center'}}>Welcome to Blog</h1>
+            {data.slice(0,10).map((e: Blogs) => {
+                return <div key={e.id} style={{width : '40%', margin : 'auto', display : 'flex', gap : '20px'}}>
+                    <p>{e.id}</p>
+                    <Link href={`Blogs/${e.id}`} style={{textDecoration:'none', color : 'red'}}><p>{e.title}</p></Link>
                 </div>
             })}
         </>
