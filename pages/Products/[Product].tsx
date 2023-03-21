@@ -1,3 +1,5 @@
+import Navbar from "@/Components/Navbar";
+
 export const getStaticPaths = async () => {
     const res = await fetch(`https://api.escuelajs.co/api/v1/categories`);
     const Data = await res.json();
@@ -29,7 +31,8 @@ export const getStaticProps = async (paths: any) => {
 export default function SingleProduct({ Data }: any) {
     return (
         <>
-            <div style={{ width: '40%', margin: 'auto' }}>
+        <Navbar/>
+            <div style={{ width: '40%', margin: 'auto' }} key={Data.id}>
                 <img src={Data.image} />
                 <p>{Data.name}</p>
             </div>

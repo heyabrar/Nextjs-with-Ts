@@ -1,3 +1,5 @@
+import Navbar from "@/Components/Navbar";
+
 export const getStaticPaths = async ( ) =>{
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
     const Data = await res.json( );
@@ -31,6 +33,7 @@ export const getStaticProps = async (paths : any) =>{
 export default function SingleBlog ({Data} : any){
     return (
         <>
+        <Navbar/>
         <h1>Single Blog Page</h1>
         <h4>{Data.body}</h4>
         </>
