@@ -22,13 +22,15 @@ export default function Blog({ data }: any) {
     return (
         <>
             <Navbar />
-            <h1 style={{textAlign : 'center'}}>Welcome to Blog</h1>
-            {data.slice(0,10).map((e: Blogs) => {
-                return <div key={e.id} style={{width : '40%', margin : 'auto', display : 'flex', gap : '20px'}}>
-                    <p>{e.id}</p>
-                    <Link href={`Blogs/${e.id}`} style={{textDecoration:'none', color : 'red'}}><p>{e.title}</p></Link>
-                </div>
-            })}
+            <h1 className="text-center text-3xl mt-10" >Welcome to Blog</h1>
+            <div className="w-2/5 m-auto p-5">
+                {data.slice(0, 10).map((e: Blogs) => {
+                    return <div key={e.id} className='flex gap-2 border-2 border-blue-500 p-2 rounded-md mt-5'>
+                        <p>{e.id}</p>
+                        <Link href={`Blogs/${e.id}`} style={{ textDecoration: 'none', color: 'red' }}><p>{e.title}</p></Link>
+                    </div>
+                })}
+            </div>
         </>
     )
 }
