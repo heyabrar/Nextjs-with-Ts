@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div style={{textAlign : 'center'}}> 
-        <h1>Welcome to HomePage</h1>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png'  width='600px'/>
+      <div className="bg-red-500 mt-20 p-20 sm:bg-blue-500 md:bg-green-500 lg:bg-orange-500" > 
+        {/* <h1>Welcome to HomePage</h1> */}
+        {/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png' width='300px' className='m-auto sm:w-full'/> */}
       </div>
     </>
   )
