@@ -25,3 +25,12 @@ export const PatchTodoData = (payload : any,id:number) =>{
 export const DeleteTodoData = (id:number) =>{
     return axios.delete(`https://witty-lime-scallop.cyclic.app/todo/${id}`)
 }
+
+// export const CountOfCompleted = ( ) =>{
+//     return axios.get(`https://witty-lime-scallop.cyclic.app/todo?status=true`)
+// }
+
+
+// export const CountOfInCompleted = ( ) =>{
+//     return axios.get(`https://witty-lime-scallop.cyclic.app/todo?status=false`)
+// }
