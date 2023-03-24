@@ -9,6 +9,7 @@ export default function Navbar() {
                 <Link href='/Products' className={styles.Link}>Products</Link>
                 <Link href='/Blogs' className={styles.Link}>Blog</Link>
                 <Link href='/Photos' className={styles.Link}>Photos</Link>
+                <Link href='/todoPage' className={styles.Link}>Todo</Link>
             </nav>
         </>
     )
