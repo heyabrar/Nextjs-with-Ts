@@ -10,7 +10,7 @@ export default function AddTodo({handleAdd} : any) {
            setToast(!toast)
         }
         else{
-            handleAdd(text)
+            handleAdd(text);
             setToast(false);
         }
     }

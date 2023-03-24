@@ -20,3 +20,8 @@ export const PostTodoData = (payload : any) =>{
 export const PatchTodoData = (payload : any,id:number) =>{
     return axios.patch(`https://witty-lime-scallop.cyclic.app/todo/${id}`, payload)
 }
+
+
+export const DeleteTodoData = (id:number) =>{
+    return axios.delete(`https://witty-lime-scallop.cyclic.app/todo/${id}`)
+}

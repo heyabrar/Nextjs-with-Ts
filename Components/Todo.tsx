@@ -1,4 +1,4 @@
-import { GetTodoData, PatchTodoData, PostTodoData } from "@/Fetch/Fetch";
+import { DeleteTodoData, GetTodoData, PatchTodoData, PostTodoData } from "@/Fetch/Fetch";
 import { useEffect, useState } from "react";
 import AddTodo from "./AddTodo";
 import { ImSad, ImHappy } from 'react-icons/im'
@@ -20,6 +20,7 @@ export default function Todo() {
         .catch((err)=>console.log(err))
     }
 
+
     const handlePostTodo = (text:string) =>{
         const Payload = {
             task : text,
@@ -34,6 +35,7 @@ export default function Todo() {
     const handleAdd = (text : string) =>{
         handlePostTodo(text).then(( ) => handleGetTasks( ));
     }
+
 
 
     const handleToggleTask = (status : boolean,id:number) =>{
@@ -51,6 +53,19 @@ export default function Todo() {
         handleToggleTask (status,id).then(( ) => handleGetTasks( ));
     }
     
+
+
+    const handleDeleteTask = (id:number)=>{
+        return DeleteTodoData(id).then((res)=>{
+            setTask(res.data)
+        })
+        .catch((err)=>console.log(err))
+    }
+    const DeleteTask = (id:number) =>{
+        handleDeleteTask(id).then(( ) => handleGetTasks( ));
+    }
+
+
     useEffect(() => {
         handleGetTasks();
     }, []);
@@ -66,8 +81,8 @@ export default function Todo() {
                             <p className="w-1/5">{e.task}</p>
                             <p className={`${e.status ? 'text-green-600' : 'text-red-600'}`}>{e.task ? 'In-Complete' : 'Completed'}</p>
                             <p className={`${e.status ? 'text-green-600' : 'text-red-600'}`}> {e.status ? <ImHappy/> : <ImSad />}</p>
-                            <button onClick={( ) =>ToggleTask(!e.status,e.id)}>Mark As {e.status ? 'In-Complete' : 'Complete'}</button>
-                            <button>Delete</button>
+                            <button onClick={( ) =>ToggleTask(!e.status,e.id)} className='w-2/12'>Mark As {e.status ? 'Not Done' : 'Done'}</button>
+                            <button onClick={( ) =>DeleteTask(e.id)}>Delete</button>
                         </div>
                     })}
                 </div>
