@@ -11,3 +11,8 @@ export const GetSingleProduct = (id : any) =>{
 export const GetTodoData = ( ) =>{
     return axios.get(`https://witty-lime-scallop.cyclic.app/todo`)
 }
+
+
+export const PostTodoData = (payload : any) =>{
+    return axios.post(`https://witty-lime-scallop.cyclic.app/todo`, payload)
+}

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Toaster from "./Toaster";
 
-export default function AddTodo() {
+export default function AddTodo({handleAdd} : any) {
     const [text,setText] = useState<String | ''>('');
     const [toast,setToast] = useState(false);
 
@@ -10,6 +10,7 @@ export default function AddTodo() {
            setToast(!toast)
         }
         else{
+            handleAdd(text)
             setToast(false);
         }
     }
