@@ -16,3 +16,7 @@ export const GetTodoData = ( ) =>{
 export const PostTodoData = (payload : any) =>{
     return axios.post(`https://witty-lime-scallop.cyclic.app/todo`, payload)
 }
+
+export const PatchTodoData = (payload : any,id:number) =>{
+    return axios.patch(`https://witty-lime-scallop.cyclic.app/todo/${id}`, payload)
+}
