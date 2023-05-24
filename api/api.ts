@@ -34,3 +34,7 @@ export const DeleteTodoData = (id:number) =>{
 // export const CountOfInCompleted = ( ) =>{
 //     return axios.get(`https://witty-lime-scallop.cyclic.app/todo?status=false`)
 // }
+
+export const GetUsers = ()=>{
+    return axios.get(`'https://fakestoreapi.com/carts/user`)
+}

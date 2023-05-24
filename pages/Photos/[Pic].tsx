@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 
 export const getStaticPaths = async ( ) =>{
     const res = await fetch(`https://api.escuelajs.co/api/v1/categories`);
