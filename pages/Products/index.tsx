@@ -32,23 +32,23 @@ export default function Products() {
   }, []);
 
   return (
-    <>
+    <section>
       <Navbar />
-      <h1 className="text-center mt-10 sm:text-3xl">
-        Welcome to all Products{" "}
-      </h1>
+      <h1 className="text-center mt-10 sm:text-3xl">Welcome to all Products</h1>
       <p style={{ textAlign: "center" }}>{loading && "....Loading"}</p>
-      <div className="gap-y-6  w-11/12 m-auto sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 lg:grid grid-cols-4">
+      <div className="gap-y-6  w-11/12 m-auto sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 lg:grid lg:grid-cols-4">
         {products.length > 0 &&
           products.map((e: AllProducts) => {
             return (
               <div key={e.id} className="gap-y-6">
                 <Link href={`/Products/${e.id}`}>
-                  <img
-                    src={e.image}
-                    alt={e.name}
-                    className="m-auto mt-10 sm:w-11/12"
-                  />
+                  <div className="w-[90%] m-auto md:w-[50%]">
+                    <img
+                      src={e.image}
+                      alt={e.name}
+                      className="m-auto mt-10 w-full"
+                    />
+                  </div>
                   <p className="text-center sm:text-base md:text-lg lg:text-base">
                     {e.name}
                   </p>
@@ -57,6 +57,6 @@ export default function Products() {
             );
           })}
       </div>
-    </>
+    </section>
   );
 }

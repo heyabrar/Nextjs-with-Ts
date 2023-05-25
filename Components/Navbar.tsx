@@ -7,7 +7,6 @@ export default function Navbar() {
         <Link href="/">Home</Link>
         <Link href="/Products">Products</Link>
         <Link href="/Blogs">Blog</Link>
-
         <Link href="/todoPage">Todo</Link>
       </nav>
     </section>
