@@ -14,9 +14,7 @@ export default function Navbar() {
         <Link href="/Blogs" className={styles.Link}>
           Blog
         </Link>
-        <Link href="/assignment" className={styles.Link}>
-          Assignment
-        </Link>
+       
         <Link href="/todoPage" className={styles.Link}>
           Todo
         </Link>
