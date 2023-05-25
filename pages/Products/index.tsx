@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Navbar from "@/Components/Navbar";
 import { GetProducts } from "@/api/api";
 import { useEffect, useState } from "react";
@@ -37,7 +38,7 @@ export default function Products() {
         Welcome to all Products{" "}
       </h1>
       <p style={{ textAlign: "center" }}>{loading && "....Loading"}</p>
-      <div className="gap-y-6  w-11/12 m-auto sm:grid grid-cols-1 md:grid grid-cols-3 lg:grid grid-cols-4">
+      <div className="gap-y-6  w-11/12 m-auto sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 lg:grid grid-cols-4">
         {products.length > 0 &&
           products.map((e: AllProducts) => {
             return (

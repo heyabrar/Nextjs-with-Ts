@@ -1,24 +1,15 @@
 import Link from "next/link";
-import styles from "@/styles/Navbar.module.css";
 
 export default function Navbar() {
   return (
-    <>
-      <nav className={styles.Nav}>
-        <Link href="/" className={styles.Link}>
-          Home
-        </Link>
-        <Link href="/Products" className={styles.Link}>
-          Products
-        </Link>
-        <Link href="/Blogs" className={styles.Link}>
-          Blog
-        </Link>
-       
-        <Link href="/todoPage" className={styles.Link}>
-          Todo
-        </Link>
+    <section>
+      <nav className="py-4 flex justify-around shadow-md">
+        <Link href="/">Home</Link>
+        <Link href="/Products">Products</Link>
+        <Link href="/Blogs">Blog</Link>
+
+        <Link href="/todoPage">Todo</Link>
       </nav>
-    </>
+    </section>
   );
 }
