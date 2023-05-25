@@ -36,5 +36,5 @@ export const DeleteTodoData = (id:number) =>{
 // }
 
 export const GetUsers = ()=>{
-    return axios.get(`'https://fakestoreapi.com/carts/user`)
+    return axios.get(`https://api.escuelajs.co/api/v1/categories`)
 }
