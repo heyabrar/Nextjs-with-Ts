@@ -1,9 +1,16 @@
 import { create } from "zustand";
 
-const zustandStore = create((a) => ({
-  count: 0,
-  addCount: () => a((state: any) => ({ count: state.count + 1 })),
-  redCount: () => a((state: any) => ({ count: state.count - 1 })),
+type State = {
+  name: string;
+};
+
+type Action = {
+  updateName: (name: State["name"]) => void;
+};
+
+const zustandStore = create<State & Action>((set) => ({
+  name: "",
+  updateName: (name) => set(() => ({ name: name })),
 }));
 
 export default zustandStore;
