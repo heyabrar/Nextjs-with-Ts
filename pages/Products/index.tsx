@@ -36,7 +36,7 @@ export default function Products() {
       <Navbar />
       <h1 className="text-center mt-10 sm:text-3xl">Welcome to all Products</h1>
       <p style={{ textAlign: "center" }}>{loading && "....Loading"}</p>
-      <div className="gap-y-6  w-11/12 m-auto sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 lg:grid lg:grid-cols-4">
+      <div className="gap-y-6 w-11/12 m-auto sm:grid sm:grid-cols-1 md:grid md:grid-cols-3 lg:grid lg:grid-cols-4">
         {products.length > 0 &&
           products.map((e: AllProducts) => {
             return (

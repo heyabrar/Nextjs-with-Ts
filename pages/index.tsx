@@ -3,6 +3,7 @@ import Navbar from "@/Components/Navbar";
 import Count from "@/Components/Count";
 import Input from "@/Components/Input";
 import AssignLayput from "@/Components/AssignLayput";
+import Care from "@/Components/Care";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function Home() {
       <Count />
       <Input /> */}
       <AssignLayput />
+      <Care />
     </>
   );
 }

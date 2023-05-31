@@ -1,40 +1,44 @@
-import axios from "axios"
+import axios from "axios";
 
-export const GetProducts = ( ) =>{
-    return axios.get(`https://api.escuelajs.co/api/v1/categories`)
-}
+export const GetProducts = () => {
+  return axios.get(`https://api.escuelajs.co/api/v1/categories`);
+};
 
-export const GetSingleProduct = (id : any) =>{
-    return axios.get(`https://api.escuelajs.co/api/v1/categories/${id}`)
-}
+export const GetSingleProduct = (id: any) => {
+  return axios.get(`https://api.escuelajs.co/api/v1/categories/${id}`);
+};
 
-export const GetTodoData = ( ) =>{
-    return axios.get(`https://witty-lime-scallop.cyclic.app/todo`)
-}
+export const GetTodoData = () => {
+  return axios.get(`https://witty-lime-scallop.cyclic.app/todo`);
+};
 
+export const PostTodoData = (payload: any) => {
+  return axios.post(`https://witty-lime-scallop.cyclic.app/todo`, payload);
+};
 
-export const PostTodoData = (payload : any) =>{
-    return axios.post(`https://witty-lime-scallop.cyclic.app/todo`, payload)
-}
+export const PatchTodoData = (payload: any, id: number) => {
+  return axios.patch(
+    `https://witty-lime-scallop.cyclic.app/todo/${id}`,
+    payload
+  );
+};
 
-export const PatchTodoData = (payload : any,id:number) =>{
-    return axios.patch(`https://witty-lime-scallop.cyclic.app/todo/${id}`, payload)
-}
-
-
-export const DeleteTodoData = (id:number) =>{
-    return axios.delete(`https://witty-lime-scallop.cyclic.app/todo/${id}`)
-}
+export const DeleteTodoData = (id: number) => {
+  return axios.delete(`https://witty-lime-scallop.cyclic.app/todo/${id}`);
+};
 
 // export const CountOfCompleted = ( ) =>{
 //     return axios.get(`https://witty-lime-scallop.cyclic.app/todo?status=true`)
 // }
 
-
 // export const CountOfInCompleted = ( ) =>{
 //     return axios.get(`https://witty-lime-scallop.cyclic.app/todo?status=false`)
 // }
 
-export const GetUsers = ()=>{
-    return axios.get(`https://api.escuelajs.co/api/v1/categories`)
-}
+export const GetUsers = () => {
+  return axios.get(`https://api.escuelajs.co/api/v1/categories`);
+};
+
+export const getCareProducts = () => {
+  return axios.get(`https://beautybebodbjson.onrender.com/MomAndBabyCare`);
+};
