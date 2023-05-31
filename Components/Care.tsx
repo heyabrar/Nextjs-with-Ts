@@ -1,18 +1,27 @@
 import { getCareProducts } from "@/api/api";
-import React, { useEffect } from "react";
-
-type Props = {};
+import React, { useEffect, useState } from "react";
 
 const Care = () => {
-  const handleGetCareProducts = () => {
-    getCareProducts().then((res) => {
-      console.log(res.data);
+  const [careProducts, setCareProducts] = useState<ICareProducts[]>([]);
+
+  const handleGetCareProducts = async () => {
+    let response = null;
+    await getCareProducts().then((res) => {
+      response = res.data;
+    });
+    return response;
+  };
+
+  const getData = () => {
+    handleGetCareProducts().then((res: ICareProducts[] | null) => {
+      console.log(res);
     });
   };
 
   useEffect(() => {
-    handleGetCareProducts();
+    getData();
   }, []);
+
   return <div>Care</div>;
 };
 
